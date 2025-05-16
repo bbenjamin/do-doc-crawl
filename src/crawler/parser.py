@@ -27,7 +27,7 @@ class Parser:
             else:
                 continue
 
-            if starturl not in href:
+            if starturl not in href and starturl.replace('www.', '') not in href:
                 print(starturl + ' not in ' + href)
                 continue
 
@@ -54,7 +54,9 @@ class Parser:
         try:
             # Best practice: set a timeout, use a user agent
             headers = {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3 Safari/605.1.15'
+                'User-Agent': 'curl/8.4.0',
+                'Accept': '*/*'
+                # 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36'
             }
 
             response = requests.get(
