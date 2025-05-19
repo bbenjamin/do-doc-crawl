@@ -7,6 +7,6 @@ if __name__ == "__main__":
     crawler.start_crawling()
     print('done crawling')
     link_tree = crawler.get_link_tree()
-    print(link_tree)
+
     # json = create_hierarchical_json_tree(link_tree)
     write_json_to_file(link_tree, CrawlerConfig.OUTPUT_FILE)

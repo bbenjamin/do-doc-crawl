@@ -2,6 +2,9 @@
 
 This project is a web crawler designed to extract internal links from the Drupal documentation site. It creates a hierarchical JSON tree of all internal links within the `#block-system-main` section, crawling through 12 levels of nesting.
 
+## Warning: AI + Human Chaos
+The initial build was AI generated
+
 ## Project Structure
 
 ```

@@ -15,21 +15,22 @@ class Parser:
             print('could not access ' + url)
             return []
         links = []
-        for link in soup.select('#block-system-main a[href^="/"]'):
+        # for link in soup.select('#block-system-main a[href^="/"]'):
+        for link in soup.select('#block-system-main .pane-section-contents section h2 a[href^="/"]'):
+
             href = link.get('href')
             href = href.split('?')[0].split('#')[0]
             if href in visited:
                 continue
             if href.startswith('https://drupal.org'):
                 pass  # Keep as-is
-            elif href.startswith('/docs') or href.startswith('/drupal-wiki'):
+            elif href.startswith('/'):
                 href = 'https://drupal.org' + href
             else:
                 continue
 
-            if starturl not in href and starturl.replace('www.', '') not in href:
-                print(starturl + ' not in ' + href)
-                continue
+            # if starturl.replace('/index.html', '') not in href and starturl.replace('/index.html', '').replace('www.', '') not in href:
+            #     continue
 
             if href in visited:
                 continue

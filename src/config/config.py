@@ -1,15 +1,15 @@
 class CrawlerConfig:
     # Starting URL for the crawler
-    START_URL = 'https://www.drupal.org/docs/develop'
+    START_URL = 'https://www.drupal.org/docs/administering-a-drupal-site'
 
     # Maximum depth of links to crawl (12 levels of nesting)
-    MAX_DEPTH = 3
+    MAX_DEPTH = 8
 
     # CSS selector to find internal links within the main content block
     INTERNAL_LINK_SELECTOR = '#block-system-main .pane-content a[href^="/"]'
 
     # Output file path
-    OUTPUT_FILE = 'output/drupal_develop_docs_tree.json'
+    OUTPUT_FILE = 'output/drupal_headings_administering.json'
 
     # Request headers to mimic a browser
     HEADERS = {
